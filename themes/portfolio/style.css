@@ -13,7 +13,6 @@ body {
   padding: 0 20px;
 }
 
-/* Global Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -192,6 +191,18 @@ footer {
   padding: 20px 0;
   background: #333;
   color: #fff;
+}
+
+/* Animations for Intersection Observer */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive Design */
