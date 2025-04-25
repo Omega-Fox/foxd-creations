@@ -1,3 +1,31 @@
+:root {
+  --bg: #ffffff;
+  --text: #333;
+  --accent: #ffd166;
+  --accent-hover: #fcbf49;
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --section-bg: #fafafa;
+  --card-bg: #ffffff;
+  --icon-color: #58b4ae;
+  --footer-bg: #222;
+  --footer-text: #ccc;
+  --link-hover: #253439;
+}
+
+body.pastel {
+  --bg: #fffaf7;
+  --text: #413838;
+  --accent: #f7c8b0;
+  --accent-hover: #f3b199;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: #fff5f0;
+  --card-bg: #ffffffcc;
+  --icon-color: #a5cbb8;
+  --footer-bg: #f0e8e2;
+  --footer-text: #7d6b6b;
+  --link-hover: #998c8c;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,9 +34,10 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .navbar {
@@ -16,9 +45,9 @@ body {
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 100;
 }
 
@@ -48,9 +77,54 @@ body {
 }
 
 .navbar-links a:hover {
-  color: #253439;
+  color: var(--link-hover);
 }
 
+/* Theme Toggle Switch */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 20px;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Hero */
 .hero {
   background: url('assets/images/happypetgroomers1.png') center/cover no-repeat;
   min-height: 100vh;
@@ -96,8 +170,9 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Buttons */
 .btn {
-  background-color: #ffd166;
+  background-color: var(--accent);
   color: #222;
   padding: 0.75rem 1.5rem;
   font-weight: bold;
@@ -108,15 +183,17 @@ body {
 }
 
 .btn:hover {
-  background-color: #fcbf49;
+  background-color: var(--accent-hover);
 }
 
+/* Sections */
 .section {
   padding: 5rem 2rem;
   text-align: center;
+  background: var(--section-bg);
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
 }
 
 .section.visible {
@@ -129,6 +206,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Icons */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -140,7 +218,7 @@ body {
   padding: 1.5rem;
   border: 1px solid #eee;
   border-radius: 8px;
-  background: #fafafa;
+  background: var(--card-bg);
   transition: transform 0.2s ease;
 }
 
@@ -150,10 +228,11 @@ body {
 
 .icon-box i {
   font-size: 2.5rem;
-  color: #58b4ae;
+  color: var(--icon-color);
   margin-bottom: 1rem;
 }
 
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -168,15 +247,17 @@ body {
   border-radius: 8px;
 }
 
+/* Footer */
 footer {
-  background: #222;
-  color: #ccc;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 2rem;
   text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 footer a {
-  color: #ffd166;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 500;
 }
