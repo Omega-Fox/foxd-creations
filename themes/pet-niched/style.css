@@ -31,7 +31,6 @@ body {
 }
 
 .navbar-logo {
-  margin: 0;
   font-weight: 700;
   color: #4b5e72;
 }
@@ -53,7 +52,7 @@ body {
 }
 
 .hero {
-  background: url('https://raw.githubusercontent.com/Omega-Fox/foxd-portfolio/main/happypetgroomers1.png') center/cover no-repeat;
+  background: url('happypetgroomers1.png') center/cover no-repeat;
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: 2rem;
@@ -115,6 +114,14 @@ body {
 .section {
   padding: 5rem 2rem;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section h2 {
