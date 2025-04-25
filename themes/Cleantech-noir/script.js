@@ -1,16 +1,26 @@
-// Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
+  // ===== THEME TOGGLE =====
+  const toggle = document.getElementById("theme-switch");
+  const body = document.body;
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thanks for reaching out! I'll get back to you soon.");
-      form.reset();
-    });
+  // Check saved theme preference
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggle.checked = true;
   }
 
-  // Project data (you can add as many as you like)
+  // Toggle switch event
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+  // ===== PROJECTS =====
   const projects = [
     {
       title: "Portfolio Redesign",
@@ -18,14 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "A sleek rebuild of my personal site, focused on responsive design and elegant interactions."
     },
     {
-      title: "Landing Page UI",
+      title: "Startup Landing Page",
       image: "assets/project2.jpg",
-      description: "A minimalist, high-converting landing page for a startup’s beta product."
+      description: "High-converting launch page for a SaaS beta release."
     },
     {
-      title: "Dashboard Prototype",
+      title: "Admin Dashboard UI",
       image: "assets/project3.jpg",
-      description: "Built a data dashboard with dark mode and clean visuals using HTML, CSS, and vanilla JS."
+      description: "Dark mode dashboard with charts, notifications, and modular components."
     }
   ];
 
@@ -43,6 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       projectGrid.appendChild(projectEl);
+    });
+  }
+
+  // ===== CONTACT FORM =====
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thanks for your message! I’ll get back to you soon.");
+      form.reset();
     });
   }
 });
