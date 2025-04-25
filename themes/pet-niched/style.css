@@ -52,7 +52,7 @@ body {
 }
 
 .hero {
-  background: url('happypetgroomers1.png') center/cover no-repeat;
+  background: url('assets/images/happypetgroomers1.png') center/cover no-repeat;
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: 2rem;
