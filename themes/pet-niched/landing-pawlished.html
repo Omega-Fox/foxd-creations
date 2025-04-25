@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawlished & Proper | Premium Pet Grooming & Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/enhancements.css" />
+  <meta name="description" content="Pawlished & Proper offers professional pet grooming, boarding, and daycare services. First grooming free for new clients!" />
+  <meta name="author" content="David Fox">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <h3 class="navbar-logo">Pawlished & Proper</h3>
+      <div class="navbar-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Book</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Pawlished & Proper</h1>
+      <p>We take care of your pets like they’re part of our family.</p>
+      <a href="#" class="btn">Book Your First Visit</a>
+    </div>
+  </section>
+
+  <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#fff" d="M0,96L48,101.3C96,107,192,117,288,106.7C384,96,480,64,576,69.3C672,75,768,117,864,133.3C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+  </svg>
+
+  <section id="services" class="section">
+    <h2>What We Do</h2>
+    <div class="icon-grid">
+      <div class="icon-box">
+        <i class="fas fa-dog"></i>
+        <p>Pet Grooming</p>
+      </div>
+      <div class="icon-box">
+        <i class="fas fa-bone"></i>
+        <p>Daycare & Play</p>
+      </div>
+      <div class="icon-box">
+        <i class="fas fa-home"></i>
+        <p>Boarding</p>
+      </div>
+      <div class="icon-box">
+        <i class="fas fa-heartbeat"></i>
+        <p>Health & Hygiene</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <h2>Happy Pets</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="A happy dog being groomed" />
+      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6" alt="A playful dog outdoors" />
+      <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b" alt="A dog enjoying a sunny day" />
+      <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb" alt="A cat lounging comfortably" />
+    </div>
+  </section>
+
+  <section id="contact" class="section" style="background:#fef9f5;">
+    <h2>Ready to Pamper Your Pet?</h2>
+    <p style="margin: 1rem 0;">Join dozens of happy customers and schedule your pet’s first visit today.</p>
+    <a href="#" class="btn">Book Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pawlished & Proper · <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <!-- JavaScript for Scroll-to-Reveal Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll(".section");
+      const revealSection = () => {
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.8) {
+            section.classList.add("visible");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealSection);
+      revealSection();
+    });
+  </script>
+</body>
+</html>
