@@ -284,3 +284,10 @@ footer a {
     height: 180px;
   }
 }
+
+.btn.clicked {
+  transform: scale(0.97);
+  box-shadow: 0 0 0 6px rgba(255, 209, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
