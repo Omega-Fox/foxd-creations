@@ -1,8 +1,11 @@
-document.getElementById("contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Thanks for reaching out! I’ll get back to you soon.");
-  e.target.reset();
-});
+const form = document.getElementById("contact-form");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Thanks for reaching out! I’ll get back to you soon.");
+    e.target.reset();
+  });
+}
 
 const projects = [
   {
