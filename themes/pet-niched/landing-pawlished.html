@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pawlished & Proper | Premium Pet Grooming & Care</title>
+  <meta name="description" content="Pawlished & Proper offers professional pet grooming, boarding, and daycare services. First grooming free for new clients!" />
+  <meta name="author" content="David Fox" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="assets/css/enhancements.css" />
-  <meta name="description" content="Pawlished & Proper offers professional pet grooming, boarding, and daycare services. First grooming free for new clients!" />
-  <meta name="author" content="David Fox">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -27,7 +27,7 @@
     <div class="hero-overlay">
       <h1>Pawlished & Proper</h1>
       <p>We take care of your pets like they’re part of our family.</p>
-      <a href="#" class="btn">Book Your First Visit</a>
+      <a href="#contact" class="btn">Book Your First Visit</a>
     </div>
   </section>
 
@@ -77,21 +77,6 @@
     <p>&copy; 2025 Pawlished & Proper · <a href="#">Privacy Policy</a></p>
   </footer>
 
-  <!-- JavaScript for Scroll-to-Reveal Animations -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll(".section");
-      const revealSection = () => {
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.8) {
-            section.classList.add("visible");
-          }
-        });
-      };
-      window.addEventListener("scroll", revealSection);
-      revealSection();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
